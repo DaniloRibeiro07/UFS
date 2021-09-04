@@ -1,0 +1,5 @@
+numero_do_funcionario = int(input())
+horas_trabalhadas = int(input())
+valor_por_hora = float(input())
+print('NUMBER =', numero_do_funcionario)
+print('SALARY = R$', '%.2f' % (horas_trabalhadas*valor_por_hora))
