@@ -1,16 +1,11 @@
-mes = int(input())
-ano = int(input())
-anos31 = [1, 3, 5, 7, 8, 10, 12]
-x = 0
-if mes == 2:
-    if ano % 4 == 0:
-        print(29)
-    else:
-        print(28)
-else:
-    while x < 7:
-        if(anos31[x] == mes):
-            print(31)
-            exit()
-        x += 1
-    print(30)
+mes, ano = int(input()), int(input())
+
+if mes == 2 and ano % 4 == 0:
+    print(29)
+if mes == 2 and ano % 4 != 0:
+    print(28)
+
+if mes==1 or mes==3 or mes == 5 or mes == 7 or mes == 8 or mes == 10 or mes == 12:
+    print(31)
+if mes == 4 or mes == 6 or mes == 9 or mes == 11:
+    print(30) 

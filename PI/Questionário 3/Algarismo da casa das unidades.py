@@ -1,5 +1,3 @@
-n = input()
-if int(n) < 0:
-    print("-%d" % (int(n[-1])))
-else:
-    print("%d" % int(n[-1]))
+n = float(input())/10
+n = (n-int(n))*10
+print('%.0f'%n)

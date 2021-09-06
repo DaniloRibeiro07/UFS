@@ -1,8 +1,17 @@
-numeros = [float(input()), float(input()), float(input())]
-m = (numeros[0]+numeros[1]+numeros[2])/3
-n1 = n2 = 0
-while n1 < 3:
-    if numeros[n1] > m:
-        n2 += 1
-    n1 += 1
-print(n2)
+numero1=float(input())
+numero2=float(input())
+numero3=float(input())
+
+m = (numero1+numero2+numero3)/3
+n = 0
+
+if numero1>m:
+    n = n+1
+
+if numero2>m:
+    n = n+1
+
+if numero3>m:
+    n = n+1
+
+print(n)
