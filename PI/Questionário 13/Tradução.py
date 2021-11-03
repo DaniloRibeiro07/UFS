@@ -11,13 +11,11 @@ while True:
 
   texto_apos_traducao=list()
   for i in range(n_de_linhas_texto):
-    texto=input().split()
+    texto=input()
     for palavra_errada, palavra_certa in correcao.items():
-      for cont in range(len(texto)):
-        for tamanho in range(0,len(texto[cont]),len(palavra_errada)):
-          texto[cont]=texto[cont].replace(palavra_errada,palavra_certa)
+      texto=texto.replace(palavra_errada,palavra_certa)
 
-    texto_apos_traducao.append(texto.copy())
+    texto_apos_traducao.append(texto)
 
   for texto in texto_apos_traducao:
-    print(" ".join(texto))
+    print("".join(texto))

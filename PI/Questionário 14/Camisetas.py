@@ -1,44 +1,24 @@
-quantidade_camisas=int(input())
-lista_dados_camisas=list()
-dados_camisas={}
-for i in range(quantidade_camisas):
+while True: 
+  quantidade_camisas=int(input())
+  if quantidade_camisas==0:
+    break
+  dados_camisas={}
+  for i in range(quantidade_camisas):
     aluno=input()
-    cor, tamanho=input().split()
-    lista_dados_camisas.append((cor,tamanho,aluno))
-    dados_camisas[cor]=
-lista_dados_camisas.sort()
+    dados_camisas[aluno]=input().split()
+  lista_dados_camisas=list()
+  for aluno, cor_tamanho in dados_camisas.items():
+    lista_dados_camisas.append((cor_tamanho[0],cor_tamanho[1],aluno))
 
+  for i in range(len(lista_dados_camisas)-1,0,-1):
+    for j in range(i):
+      if lista_dados_camisas[j][0]>lista_dados_camisas[j+1][0]:
+        lista_dados_camisas[j],lista_dados_camisas[j+1]=lista_dados_camisas[j+1],lista_dados_camisas[j]
+      if lista_dados_camisas[j][1]<lista_dados_camisas[j+1][1] and lista_dados_camisas[j][0]==lista_dados_camisas[j+1][0]:
+        lista_dados_camisas[j],lista_dados_camisas[j+1]=lista_dados_camisas[j+1],lista_dados_camisas[j]
+      if lista_dados_camisas[j][2]>lista_dados_camisas[j+1][2] and lista_dados_camisas[j][0]==lista_dados_camisas[j+1][0] and lista_dados_camisas[j][1]==lista_dados_camisas[j+1][1]:
+        lista_dados_camisas[j],lista_dados_camisas[j+1]=lista_dados_camisas[j+1],lista_dados_camisas[j]
 
-for linha in lista_dados_camisas:
-    dados_camisas[]
-
-'''
-3
-Maria Joao
-branco P
-Marcio Guess
-vermelho P
-Maria Jose
-branco P
-'''
-'''
-9
-Maria Jose
-branco P
-Mangojata Mancuda
-vermelho P
-Cezar Torres Mo
-branco P
-Baka Lhau
-vermelho P
-JuJu Mentina
-branco M
-Amaro Dinha
-vermelho P
-Adabi Finho
-branco G
-Severina Rigudinha
-branco G
-Carlos Chade Losna
-vermelho P
-'''
+  for dado in lista_dados_camisas:
+    print(" ".join(dado))
+  print()
