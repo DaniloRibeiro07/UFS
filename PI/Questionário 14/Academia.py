@@ -3,13 +3,13 @@ for x in range(100):
   nome=input()
   if nome=="SAIR":
     break
-  senha=int(input())
+  senha=input()
   situacao_mensalidade=input()
   dados_clientes[nome]=(senha,situacao_mensalidade)
 
 while True:
-  senha_a_ser_testada=int(input())
-  if senha_a_ser_testada==-1:
+  senha_a_ser_testada=input()
+  if senha_a_ser_testada=='-1':
     break
 
   for nome, senha_situacao_mensalidade in dados_clientes.items():
@@ -21,3 +21,4 @@ while True:
 
     else:
       print("Seja bem-vindo(a)! Procure a recepção!")
+
