@@ -1,31 +1,28 @@
-dict_paises_dados={}
-while True:
-  entrada=input()
-  if entrada=='*':
-    break
-  pais,medalha=entrada.split(',')
-  if pais not in dict_paises_dados:
-    dict_paises_dados[pais]={}
-    for medalha2 in ["ouro","prata","bronze"]:
-      if medalha2 not in dict_paises_dados[pais]:
-        dict_paises_dados[pais][medalha2]=0
-  dict_paises_dados[pais][medalha]=dict_paises_dados[pais].get(medalha,0) +1
- 
-lista_paises_dados=list()
-for pais, medalha_quantmedalha in dict_paises_dados.items():
-  lista_aux=[]
-  for medalha, quantmedalha in medalha_quantmedalha.items():
-    lista_aux.append(quantmedalha) 
-  lista_paises_dados.append((pais,lista_aux[0],lista_aux[1],lista_aux[2])) 
+figurinhas= int(input())
+cont_joao=0
+cont_maria=0
+lista_series=[]
+lista_j=[]
+lista_m=[]
+for i in range(figurinhas):
+    serie= int(input())
+    lista_series.append(serie)
 
-  for i in range(len(lista_paises_dados)-1,0,-1):
-    for j in range(i):
-      if lista_paises_dados[j][3]<lista_paises_dados[j+1][3]:
-        lista_paises_dados[j],lista_paises_dados[j+1]=lista_paises_dados[j+1],lista_paises_dados[j]
-      if lista_paises_dados[j][2]<lista_paises_dados[j+1][2] and lista_paises_dados[j][1]>=lista_paises_dados[j+1][1]:
-        lista_paises_dados[j],lista_paises_dados[j+1]=lista_paises_dados[j+1],lista_paises_dados[j]
-      if lista_paises_dados[j][1]<lista_paises_dados[j+1][1] and lista_paises_dados[j][2]>=lista_paises_dados[j+1][2] and lista_paises_dados[j][1]>=lista_paises_dados[j+1][1]:
-        lista_paises_dados[j],lista_paises_dados[j+1]=lista_paises_dados[j+1],lista_paises_dados[j]
-      
 
-print(lista_paises_dados)
+for valor in lista_series:
+    if valor%2==0:
+        cont_joao+=1
+        if  valor not in lista_j:
+            lista_j.append(valor)
+    else:
+        cont_maria+=1
+        if valor not in lista_j:
+            lista_m.append(valor)
+
+if sum(lista_m)>sum(lista_j):
+    print(lista_m)
+else:
+    print(lista_j)
+
+print(cont_joao)
+print(cont_maria)
