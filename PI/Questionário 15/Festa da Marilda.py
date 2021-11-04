@@ -3,7 +3,8 @@ def ordenar_lista(lista):
         for j in range(i):
             if lista[j]>lista[j+1]:
                 lista[j],lista[j+1]=lista[j+1],lista[j]
-    print("\n".join(lista))
+    if lista!=[]:
+        print("\n".join(lista))
     
 def criacao_de_lista():
     lista_aux=[]
